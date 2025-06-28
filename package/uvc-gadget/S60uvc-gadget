@@ -1,0 +1,62 @@
+#!/bin/sh
+
+DAEMON="uvc-gadget"
+PIDFILE="/var/run/$DAEMON.pid"
+SETUP="/usr/local/bin/uvc-gadget.sh"
+
+UVC_GADGET_ARGS=""
+
+[ -r "/etc/default/$DAEMON" ] && . "/etc/default/$DAEMON"
+
+start() {
+	printf 'Starting %s: ' "$DAEMON"
+
+	if ! sh "$SETUP" start > /dev/null 2>&1; then
+		echo "FAIL"
+		return 1
+	fi
+
+	start-stop-daemon --start --background --make-pidfile\
+		--pidfile "$PIDFILE" --exec "/usr/bin/$DAEMON" \
+		-- -c 0 uvc.0 -p "23 24 26" $UVC_GADGET_ARGS
+	status=$?
+	if [ "$status" -eq 0 ]; then
+		echo "OK"
+	else
+		echo "FAIL"
+	fi
+	return "$status"
+}
+
+stop() {
+	printf 'Stopping %s: ' "$DAEMON"
+
+	sh "$SETUP" stop > /dev/null 2>&1
+
+	start-stop-daemon --stop --quiet \
+		--pidfile "$PIDFILE"
+	status=$?
+	if [ "$status" -eq 0 ]; then
+		echo "OK"
+	else
+		echo "FAIL"
+	fi
+	rm -f "$PIDFILE"
+	return "$status"
+}
+
+restart() {
+	stop
+	start
+}
+
+
+case "$1" in
+	start|stop|restart)
+		"$1";;
+	reload)
+		restart;;
+	*)
+		echo "Usage: $0 {start|stop|restart|reload}"
+		exit 1
+esac

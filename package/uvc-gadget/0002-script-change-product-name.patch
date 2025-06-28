@@ -1,0 +1,11 @@
+--- a/scripts/uvc-gadget.sh
++++ b/scripts/uvc-gadget.sh
+@@ -10,7 +10,7 @@
+ PID="0xdead"
+ SERIAL="0123456789"
+ MANUF=$(hostname)
+-PRODUCT="UVC Gadget"
++PRODUCT="Webcam Pi"
+ BOARD=$(strings /proc/device-tree/model)
+ UDC=`ls /sys/class/udc` # will identify the 'first' UDC
+ 

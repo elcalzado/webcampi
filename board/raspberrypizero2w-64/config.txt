@@ -1,0 +1,17 @@
+# Specify kernel image file name
+kernel=Image
+
+# Automatically load overlays for detected cameras
+camera_auto_detect=1
+
+# Enable DRM VC4 V3D driver
+dtoverlay=vc4-kms-v3d
+
+# Run in 64-bit mode
+arm_64bit=1
+
+# Run as fast as firmware / board allows
+arm_boost=1
+
+# Enable peripheral mode
+dtoverlay=dwc2,dr_mode=peripheral

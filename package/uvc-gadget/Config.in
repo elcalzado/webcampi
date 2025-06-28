@@ -1,0 +1,9 @@
+config BR2_PACKAGE_UVC_GADGET
+	bool "uvc-gadget"
+	select BR2_PACKAGE_JPEG
+	select BR2_PACKAGE_LIBCAMERA
+	help
+	  Creates a UVC device for streaming video
+	  from a camera to a host computer.
+
+	  https://github.com/elcalzado/uvc-gadget

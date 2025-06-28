@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_WEBCAMPI_PATH/package/uvc-gadget/Config.in"

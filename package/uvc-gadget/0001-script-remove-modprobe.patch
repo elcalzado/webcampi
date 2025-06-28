@@ -1,0 +1,14 @@
+--- a/scripts/uvc-gadget.sh
++++ b/scripts/uvc-gadget.sh
+@@ -166,11 +166,6 @@
+ 	start)
+ 	echo "Creating the USB gadget"
+ 
+-	if ! grep -q libcomposite /lib/modules/$(uname -r)/modules.builtin; then
+-		echo "Loading composite module"
+-		modprobe libcomposite
+-	fi
+-
+ 	echo "Creating gadget directory g1"
+ 	mkdir -p $GADGET/g1
+ 
