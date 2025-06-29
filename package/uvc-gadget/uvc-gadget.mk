@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-UVC_GADGET_VERSION = v0.4.3
+UVC_GADGET_VERSION = v0.4.4
 UVC_GADGET_SITE = https://github.com/elcalzado/uvc-gadget.git
 UVC_GADGET_SITE_METHOD = git
 UVC_GADGET_LICENSE = NONE
