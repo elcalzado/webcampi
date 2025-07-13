@@ -15,3 +15,7 @@ arm_boost=1
 
 # Enable peripheral mode
 dtoverlay=dwc2,dr_mode=peripheral
+
+# Disable the built-in LED
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
