@@ -20,7 +20,7 @@ An embedded Linux image that turns your Raspberry Pi Zero 2 W and camera module 
 | Raspberry Pi Zero 2 W   | Main compute module   |
 | Supported camera sensor | CSI-2 camera module   |
 | microSD card (≥100 MB)  | System storage        |
-| USB-C cable         	  | USB-OTG data & power  |
+| micro-USB cable         | USB-OTG data & power  |
 | Case (optional)         | Protection & mounting |
 
 ## Supported Camera Sensors
