@@ -34,7 +34,7 @@ An embedded Linux image that turns your Raspberry Pi Zero 2 W and camera module 
 - IMX290\*
 - IMX519\*
 
-**\*: Untested** – only the IMX708 has been verified to work. Other sensors are included in the kernel and supported by libcamera, but your mileage may vary.
+**\*: Untested** – only the IMX708 and IMX477 have been verified to work. Other sensors are included in the kernel and supported by libcamera, but your mileage may vary.
 
 ## Features
 
