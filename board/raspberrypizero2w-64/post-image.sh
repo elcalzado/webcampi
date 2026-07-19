@@ -20,7 +20,7 @@ if [ ! -e "${GENIMAGE_CFG}" ]; then
 	FILES+=( "${KERNEL}" )
 
 	BOOT_FILES=$(printf '\\t\\t\\t"%s",\\n' "${FILES[@]}")
-	sed "s|#BOOT_FILES#|${BOOT_FILES}|" "${BR2_EXTERNAL_WEBCAMPI_PATH}/board/raspberrypizero2w-64/genimage.cfg.in" \
+	sed "s|#BOOT_FILES#|${BOOT_FILES}|" "${BOARD_DIR}/genimage.cfg.in" \
 		> "${GENIMAGE_CFG}"
 fi
 
